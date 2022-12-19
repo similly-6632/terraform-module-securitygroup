@@ -1,6 +1,5 @@
 provider "aws" {
   region  = var.region
-  profile = "default"
 }
 
 module "security_group_http" {
