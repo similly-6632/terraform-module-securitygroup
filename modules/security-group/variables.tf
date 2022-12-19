@@ -1,27 +1,18 @@
 variable "ingress_rules" {
-  description = "Security group ingress rules"
+  description = "Security Group ingress rules"
 }
 variable "egress_rules" {
-  description = "Security group egress rules"
-  default = [
-    {
-      description = "Default egress"
-      from_port   = 0
-      to_port     = 0
-      protocol    = -1
-      cidr_blocks = ["0.0.0.0/0"]
-    }
-  ]
+  description = "Security Group egress rules"
 }
 variable "sg_name" {
-
+  description = "Name for the Security Group"
 }
 variable "sg_description" {
-
+  description = "Description for the Security Group"
 }
 variable "vpc_id" {
-
+  description = "VPC ID for where the Security Group will be created"
 }
 variable "environment" {
-
+  description = "Environment tag assigned to the Security Group"
 }

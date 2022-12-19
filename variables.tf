@@ -1,6 +1,9 @@
 variable "region" {
   description = "Region"
 }
+variable "vpc_id" {
+  description = "Region"
+}
 variable "cidr_blocks" {
   description = "APIPA CIDR Blocks"
   type        = list(string)
