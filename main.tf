@@ -16,7 +16,7 @@ module "security_group_http" {
       from_port   = 80
       to_port     = 80
       protocol    = "tcp"
-      cidr_blocks = ["192.168.0.0/24", "10.0.0.0/8"]
+      cidr_blocks = var.cidr_blocks
     }
   ]
 
@@ -38,7 +38,7 @@ module "security_group_https" {
       from_port   = 443
       to_port     = 443
       protocol    = "tcp"
-      cidr_blocks = ["192.168.0.0/24", "10.0.0.0/8"]
+      cidr_blocks = var.cidr_blocks
     }
   ]
 
@@ -62,7 +62,7 @@ module "security_group_octopus" {
       from_port   = 10933
       to_port     = 10933
       protocol    = "tcp"
-      cidr_blocks = ["192.168.0.0/24", "10.0.0.0/8"]
+      cidr_blocks = var.cidr_blocks
     }
   ]
 
@@ -84,7 +84,7 @@ module "security_group_ssh" {
       from_port   = 22
       to_port     = 22
       protocol    = "tcp"
-      cidr_blocks = ["192.168.0.0/24", "10.0.0.0/8"]
+      cidr_blocks = var.cidr_blocks
     }
   ]
 
