@@ -16,6 +16,13 @@ module "security_group" {
       to_port     = 80
       protocol    = "tcp"
       cidr_blocks = var.cidr_blocks
+    },
+        {
+      description = "https"
+      from_port   = 443
+      to_port     = 443
+      protocol    = "tcp"
+      cidr_blocks = var.cidr_blocks
     }
   ]
 
