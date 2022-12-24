@@ -2,6 +2,14 @@ provider "aws" {
   region = var.region
 }
 
+locals {
+  tags = {
+    "Name"        = "http only"
+    "Environment" = "test"
+    "Budget"      = "1234"
+  }
+}
+
 module "security_group" {
   source = "./modules/security-group"
 
@@ -17,7 +25,7 @@ module "security_group" {
       protocol    = "tcp"
       cidr_blocks = var.cidr_blocks
     },
-        {
+    {
       description = "https"
       from_port   = 443
       to_port     = 443
@@ -36,5 +44,5 @@ module "security_group" {
     }
   ]
 
-  environment = "test"
+  tags = local.tags
 }

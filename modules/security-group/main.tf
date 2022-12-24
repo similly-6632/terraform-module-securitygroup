@@ -27,8 +27,5 @@ resource "aws_security_group" "this" {
     }
   }
 
-  tags = {
-    Name        = var.sg_name
-    Environment = var.environment
-  }
+  tags = var.tags
 }

@@ -13,6 +13,10 @@ variable "sg_description" {
 variable "vpc_id" {
   description = "VPC ID for where the Security Group will be created"
 }
-variable "environment" {
-  description = "Environment tag assigned to the Security Group"
+variable "tags" {
+  description = "Map of tags"
+  type        = map(string)
+  default = {
+
+  }
 }
