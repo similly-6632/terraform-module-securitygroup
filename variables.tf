@@ -1,11 +1,24 @@
-variable "region" {
-  description = "Region"
+variable "ingress_rules" {
+  description = "Security Group ingress rules"
+}
+variable "egress_rules" {
+  description = "Security Group egress rules"
+}
+variable "sg_name" {
+  description = "Name for the Security Group"
+    type = string
+  default = ""
+}
+variable "sg_description" {
+  description = "Description for the Security Group"
+  type = string
+  default = ""
 }
 variable "vpc_id" {
-  description = "Region"
+  description = "VPC ID for where the Security Group will be created"
 }
-variable "cidr_blocks" {
-  description = "APIPA CIDR Blocks"
-  type        = list(string)
-  default     = ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/24"]
+variable "tags" {
+  description = "Map of tags"
+  type        = map(string)
+  default = {}
 }
